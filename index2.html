@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Element / Dropdowns</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            padding-top: 500px;
+        }
+        select {
+            display: block;
+            padding: 5px 8px;
+            border-radius: 4px;
+            min-width: 200px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>      
+        <label for="countries">Which countries would you like to travel to?</label>
+        <select name="country" id="countries">
+            <option value="">Select a country</option>
+            <option value="mexico">Mexico</option>
+            <option value="peru">Peru</option>
+            <option value="bali">Bali</option>
+            <option value="usa">USA</option>
+            <option value="japan">Japan</option>
+        </select>       
+    </div> 
+    <script>
+        function showSelectedCountry(event) {
+            if(event.target.value.length > 0) {
+                // alert(event.target.value);
+                if(event.target.value == "usa") {
+                    alert("Hello");
+                }
+                if(event.target.value == "mexico") {
+                    alert("Hola");
+                }
+                if(event.target.value == "peru") {
+                    alert("Hola");
+                }
+                if(event.target.value == "bali") {
+                    alert("uuuuuu");
+                }
+                if(event.target.value == "japan") {
+                    alert("aaaaaa");
+                }
+            }          
+        }
+
+        let countriesSelect = document.querySelector("#countries");
+        
+        countriesSelect.addEventListener('change', showSelectedCountry);
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms/Dropdowns</title>
+    <style>
+        body {
+  font-family: sans-serif;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+  font-size: 34px;
+  line-height: 48px;
+}
+
+h1 h2,
+h3 {
+  color: #231d3c;
+}
+
+.logo {
+  display: block;
+  margin: 30px auto;
+  width: 150px;
+}
+
+select {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 4px;
+  min-width: 200px;
+  margin: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="SheCOdes" class="logo" />
+    <h1>HTML Select Element</h1>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Create a select element inside a form with 5 fruits as an option and label
+      "What is your favorite fruit?"
+    </p>
+    <div>
+      <label for="fruits">What is your favorite fruit?</label>
+      <select name="fruit" id="fruits">
+        <option value="">Select one option</option>
+        <option value="apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="plum">Plum</option>
+        <option value="banana">Banana</option>
+        <option value="kiwi">Orange</option>
+      </select>
+    </div>
+    <h3>Challenge 2</h3>
+    <p>
+      Create a select element with the 3 primary colors, when the user selects
+      red, alert the emoji ❤️, when the user selects blue, alert the emoji 💙
+      and the the user selects yellow, alert 💛. Include an empty option which
+      is selected by default.
+    </p>
+
+    <div>
+      <label for="colors">What is your chosen color?</label>
+      <select name="color" id="colors">
+        <option value="">Choose one</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+    </div>
+
+    <script>
+          function showChosenColor(event) {
+          //alert(event.target.value)
+          if(event.target.value == "red") {
+            alert("❤️")
+          }
+          if(event.target.value == "blue") {
+            alert("💙")
+          }
+          if(event.target.value == "yellow") {
+            alert("💛")
+          }
+      }
+      let chosenColor = document.querySelector("#colors");
+      chosenColor.addEventListener('change', showChosenColor);
+    </script>
+</body>
+</html>

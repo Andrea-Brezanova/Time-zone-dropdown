@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Timing Events</title> 
+</head>
+<body>  
+    <div id="hello">Hello</div>
+    <p>Today's date is:</p>
+    <div id="date"></div>
+    <script>
+
+        // change after 3 seconds: 
+        function sayHello() {
+            let helloBox = document.querySelector("#hello");
+            helloBox.innerHTML = "Bonjour!";
+        }
+        setTimeout(sayHello, 3000);
+        // setTimeout(()=> {
+        // })
+
+        // update date every second or minute: 
+        function displayDate() {
+            let date = document.querySelector("#date");
+            date.innerHTML = new Date();
+        }
+        setInterval(displayDate, 1000);
+        // setInterval(displayDate, 60000);
+
+    </script>
+</body>
+</html>

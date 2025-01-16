@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise with JS Timing Events</title>
+</head>
+<body>
+    <h1>JS Timing events</h1>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Display the current date in the div below, only 5 seconds afer the page
+      loads
+    </p>
+    <div id="date">👉 👈</div>
+    
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the number of milliseconds of the current date below and update it
+      every millisecond
+    </p>
+    <div id="milliseconds">👉 👈</div>
+
+    <script>
+      function displayDate() {
+        let date = document.querySelector("#date");
+        date.innerHTML = new Date();
+      }     
+
+      function displayMilliseconds() {      
+        let milliseconds = document.querySelector("#milliseconds");
+        let date = new Date();
+        milliseconds.innerHTML = date.getMilliseconds();
+      }
+      setTimeout(displayDate, 5000);
+      setInterval(displayMilliseconds, 1);
+    </script>
+</html>

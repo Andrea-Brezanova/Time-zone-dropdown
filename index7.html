@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+    <title>Time Zones with MomentJS</title>
+</head>
+<body>
+    <div id="tokyo"></div>
+    <div id="local"></div>
+    <script>
+        // Inject Moments Library:
+        // https://cdnjs.com/libraries/moment-timezone
+        // https://devhints.io/datetime#momentjs-format
+
+        // List of all time zones:
+        // https://gist.github.com/diogocapela/12c6617fc87607d11fd62d2a4f42b02a
+        // moment.tz.names()
+
+        moment.tz('America/Los_Angeles').format('dddd H:m');
+        moment.tz('Australia/Sydney').add(5, "days").format('dddd H:m');
+
+        let tokyoTime = moment().tz("Asia/Tokyo").format("dddd, MMMM D, YYYY h:m A");
+        let tokyoElement = document.querySelector("#tokyo");
+        tokyoElement.innerHTML = tokyoTime;
+
+        let localTimezone = moment.tz.guess();
+        let localElement = document.querySelector("#local");
+        localElement.innerHTML = `Your current timezone is ${localTimezone}`;
+    </script>
+</body>
+</html>

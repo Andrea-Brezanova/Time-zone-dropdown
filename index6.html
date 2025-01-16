@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <title>Date Formats</title>
+</head>
+<body>
+    <div id="today"></div>
+    <div id="tomorrow"></div>
+    <div id="future-date"></div>
+    <script>
+        let date = new Date();
+        let months  = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let month = months[date.getDay()];
+        console.log("Today is: " + month);
+
+        // Inject Moments Library:
+        // https://cdnjs.com/libraries/moment.js
+        // https://devhints.io/datetime#momentjs-format
+
+        console.log(moment().format("dddd"));
+        // 'Tomorrow will be Thursday 16th January Hour:Minute:Second'
+        moment().add(1, 'days').format("[Tomorrow will be] dddd Do MMMM H:m:s");
+
+        let today = moment().format('dddd Do MMMM');
+        let todayElement = document.querySelector("#today");
+        todayElement.innerHTML = today;
+
+        let tomorrow = moment().add(1, "day").format("dddd Do MMMM");
+        let tomorrowElement = document.querySelector("#tomorrow");
+        tomorrowElement.innerHTML = `Tomorrow will be ${tomorrow}`;
+
+        let futureDate = moment().add(10, "years").format('dddd, MMMM D, H:mm:ss');
+        let futureDateElement = document.querySelector("#future-date");
+        futureDateElement.innerHTML = `10 years from now, it will be ${futureDate}`;
+    </script>
+</body>
+</html>
